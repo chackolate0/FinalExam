@@ -98,11 +98,39 @@ public class RetirementController implements Initializable {
 
 		//
 		// TODO: Validate Working Annual Return %, accept only numbers and decimals
+		txtAnnualReturnWorking.focusedProperty().addListener((arg0, oldValue, newValue) -> {
+	        if (!newValue) { //when focus lost
+	            if(!txtAnnualReturnWorking.getText().matches("[0-9](\\.[0-9]{1,2}){0,1}|10(\\.0{1,2}){0,1}")){
+	            	txtAnnualReturnWorking.setText("");
+	            }
+	        }
+
+	    });
 		// TODO: Validate Years retired, accepted only decimals
-		// TODO: Validate Retired Annual Return %, accept only numbers and deciamls
+		txtYearsRetired.focusedProperty().addListener((arg0, oldValue, newValue) -> {
+	        if (!newValue) { //when focus lost
+	            if(!txtYearsRetired.getText().matches("[0-9]|[0-3][0-9]|4[0]")){
+	            	txtYearsRetired.setText("");
+	            }
+	        }
+
+	    });
+		// TODO: Validate Retired Annual Return %, accept only numbers and decimals
+		txtAnnualReturnRetired.focusedProperty().addListener((arg0, oldValue, newValue) -> {
+	        if (!newValue) { //when focus lost
+	            if(!txtAnnualReturnRetired.getText().matches("[0-9](\\.[0-9]{1,2}){0,1}|10(\\.0{1,2}){0,1}")){
+	            	txtAnnualReturnRetired.setText("");
+	            }
+	        }
+
+	    });
 		// TODO: Validate Required Income, accept only decimals
 		// TODO: Validate Monthly SSI, accept only decimals
-	}
+		
+		
+
+	            //[0-9]?(\\[0-9](\\.[0-9]{1,2}){0,1}){0,1}|40(\\.0{1,2}){0,1}
+	    }
 
 	@FXML
 	public void btnClear(ActionEvent event) {

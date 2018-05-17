@@ -109,7 +109,7 @@ public class RetirementController implements Initializable {
 		// TODO: Validate Years retired, accepted only decimals
 		txtYearsRetired.focusedProperty().addListener((arg0, oldValue, newValue) -> {
 	        if (!newValue) { //when focus lost
-	            if(!txtYearsRetired.getText().matches("[0-9]|[0-3][0-9]|4[0]")){
+	            if(!txtYearsRetired.getText().matches("[0-9]|[0-3][0-9]|40")){
 	            	txtYearsRetired.setText("");
 	            }
 	        }
@@ -125,7 +125,22 @@ public class RetirementController implements Initializable {
 
 	    });
 		// TODO: Validate Required Income, accept only decimals
+		txtRequiredIncome.focusedProperty().addListener((arg0, oldValue, newValue) -> {
+	        if (!newValue) { //when focus lost
+	            if(!txtRequiredIncome.getText().matches("264[2-9]|26[5-9][0-9]|2[7-9][0-9]{2}|[3-9][0-9]{3}|10000")){
+	            	txtRequiredIncome.setText("");
+	            }
+	        }
+	    });
 		// TODO: Validate Monthly SSI, accept only decimals
+		txtMonthlySSI.focusedProperty().addListener((arg0, oldValue, newValue) -> {
+	        if (!newValue) { //when focus lost
+	            if(!txtMonthlySSI.getText().matches("[0-9]|[0-9]{2}|[0-9]{3}|1[0-9]{3}|2[0-5][0-9]{2}|26[0-3][0-9]|264[0-2]")){
+	            	txtMonthlySSI.setText("");
+	            }
+	        }
+
+	    });
 		
 		
 

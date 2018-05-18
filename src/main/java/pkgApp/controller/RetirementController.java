@@ -106,15 +106,27 @@ public class RetirementController implements Initializable {
 	        }
 
 	    });
+		
+		
 		// TODO: Validate Years retired, accepted only decimals
+		txtYearsToWork.focusedProperty().addListener((arg0, oldValue, newValue) -> {
+	        if (!newValue) { //when focus lost
+	            if(!txtYearsToWork.getText().matches("[0-9]|[0-3][0-9]|40")){
+	            	txtYearsToWork.setText("");
+	            }
+	        }
+
+	    });
+		
 		txtYearsRetired.focusedProperty().addListener((arg0, oldValue, newValue) -> {
 	        if (!newValue) { //when focus lost
-	            if(!txtYearsRetired.getText().matches("[0-9]|[0-3][0-9]|40")){
+	            if(!txtYearsRetired.getText().matches("[0-9]|1[0-9]|20")){
 	            	txtYearsRetired.setText("");
 	            }
 	        }
 
 	    });
+		
 		// TODO: Validate Retired Annual Return %, accept only numbers and decimals
 		txtAnnualReturnRetired.focusedProperty().addListener((arg0, oldValue, newValue) -> {
 	        if (!newValue) { //when focus lost
@@ -161,6 +173,21 @@ public class RetirementController implements Initializable {
 
 		// TODO: Clear, enable the rest of the input controls. Hint! You already have a
 		// HashMap of all the input controls....!!!!
+		
+		txtAnnualReturnWorking.clear();
+		txtAnnualReturnWorking.setDisable(false);
+
+		txtAnnualReturnRetired.clear();
+		txtAnnualReturnRetired.setDisable(false);
+		
+		txtYearsRetired.clear();
+		txtYearsRetired.setDisable(false);
+		
+		txtRequiredIncome.clear();
+		txtRequiredIncome.setDisable(false);
+		
+		txtMonthlySSI.clear();
+		txtMonthlySSI.setDisable(false);
 	}
 
 	@FXML

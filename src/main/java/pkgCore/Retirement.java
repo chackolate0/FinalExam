@@ -25,7 +25,8 @@ public class Retirement {
 	public double MonthlySavings() {
 
 		//TODO: Calculate AmountToSave
-		double pmt = 0; // <-- this should be fixed to calculate the real pmt
+		
+		double pmt = dAnnualReturnWorking * ; // <-- this should be fixed to calculate the real pmt
 		return pmt;
 	}
 

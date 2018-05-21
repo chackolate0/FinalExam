@@ -197,6 +197,19 @@ public class RetirementController implements Initializable {
 
 		txtSaveEachMonth.setDisable(false);
 		txtWhatYouNeedToSave.setDisable(false);
+		
+		String yearsToWork = txtYearsToWork.getText();
+		int iYearsToWork = Integer.parseInt(yearsToWork);
+		String annualReturnWorking = txtAnnualReturnWorking.getText();
+		double dAnnualReturnWorking = Double.parseDouble(annualReturnWorking);
+		String yearsRetired = txtYearsRetired.getText();
+		int iYearsRetired = Integer.parseInt(yearsRetired);
+		String annualReturnRetired = txtAnnualReturnRetired.getText();
+		double dAnnualReturnRetired = Double.parseDouble(annualReturnRetired);
+		String requiredIncome = txtRequiredIncome.getText();
+		int dRequiredIncome = Integer.parseInt(requiredIncome);
+		String monthlySSI = txtMonthlySSI.getText();
+		int dMonthlySSI = Integer.parseInt(monthlySSI);
 
 		// TODO: Calculate txtWhatYouNeedToSave value...
 		// TODO: Then calculate txtSaveEachMonth, using amount from txtWhatYouNeedToSave

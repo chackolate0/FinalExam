@@ -166,6 +166,8 @@ public class RetirementController implements Initializable {
 		// disable read-only controls
 		txtSaveEachMonth.setDisable(true);
 		txtWhatYouNeedToSave.setDisable(true);
+		txtSaveEachMonth.clear();
+		txtWhatYouNeedToSave.clear();
 
 		// Clear, enable txtYearsToWork
 		txtYearsToWork.clear();

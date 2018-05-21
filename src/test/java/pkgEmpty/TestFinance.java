@@ -14,13 +14,13 @@ public class TestFinance {
 	public void TestPV() {
 
 		int iYearsToWork = 40;
-		double dAnnualReturnWorking = 0.07;
+		double dAnnualReturnWorking = 7;
 		int iYearsRetired = 20;
-		double dAnnualReturnRetired = 0.02;
+		double dAnnualReturnRetired = 2;
 		double dRequiredIncome = 10000;
 		double dMonthlySSI = 2642;
 
-		double PV = Retirement.PV(dAnnualReturnRetired / 12, iYearsRetired * 12, dRequiredIncome - dMonthlySSI, 0, false);
+		double PV = Retirement.PV(dAnnualReturnRetired / 1200, iYearsRetired * 12, dRequiredIncome - dMonthlySSI, 0, false);
 		
 		System.out.println(PV);
 		
@@ -39,5 +39,17 @@ public class TestFinance {
 	public void TestPMT() {
 
 		//TODO: Test PMT.  Make sure PMT works as expected.
+		int iYearsToWorkpmt = 40;
+		double dAnnualReturnWorkingpmt = 7;
+		int iYearsRetiredpmt = 20;
+		double dAnnualReturnRetiredpmt = 2;
+		double dRequiredIncomepmt = 10000;
+		double dMonthlySSIpmt = 2642;
+
+		double PV = Retirement.PV(dAnnualReturnRetiredpmt / 1200, iYearsRetiredpmt * 12, dRequiredIncomepmt - dMonthlySSIpmt, 0, false);
+		double PMT = Retirement.PMT(dAnnualReturnWorkingpmt / 1200, iYearsToWorkpmt * 12, 0.0, -PV, false);
+		assertEquals(554.13, Math.abs(PMT),0.01);
+		
+		System.out.println(PMT);
 	}
 }

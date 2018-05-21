@@ -214,5 +214,10 @@ public class RetirementController implements Initializable {
 		// TODO: Calculate txtWhatYouNeedToSave value...
 		// TODO: Then calculate txtSaveEachMonth, using amount from txtWhatYouNeedToSave
 		// as input
+		
+		Retirement retirement1 = new Retirement(iYearsToWork, dAnnualReturnWorking, iYearsRetired, dAnnualReturnRetired,
+				dRequiredIncome, dMonthlySSI);
+		txtWhatYouNeedToSave.setText(" " + retirement1.TotalAmountToSave());
+		txtSaveEachMonth.setText(" " + retirement1.MonthlySavings());
 	}
 }
